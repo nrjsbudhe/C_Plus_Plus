@@ -13,10 +13,7 @@ private:
     VendingMachineStates vm_state = VendingMachineStates::Idle;
     Products sel_prod;
     PaymentType pay_type = PaymentType::Cash;
-
-    void setProduct(Products product){
-        sel_prod = product;
-    }
+    int sum_of_coins = 0;
 
 // Public Functions
 // SIMULATION --> USER BUTTONS TRIGGER FOLLOWING FUNCTIONS
@@ -55,10 +52,42 @@ public:
         }
     }
 
+    void enter_coin(Coins coins){
+        if(pay_type == PaymentType::Cash && vm_state == VendingMachineStates::Payment){
+            sum_of_coins = sum_of_coins + static_cast<int>(coins);
+            std::cout<<sum_of_coins<<std::endl;
+        }
+        else{
+            std::cout << "Something went wrong!" << std::endl;
+        }
+        
+    }
+
+    void tap_card(CardVendor card_vendor){
+        std::cout << "Requesting Payment from " << std::endl;
+        // std::cout << ge << std::endl;
+    }
+
 };
 
 int main() {
+    auto L = 5F;
+    std::cout << L << std::endl;
     VendingMachine vM;
     vM.select(Products::Chips);
-    vM.chose_payment(PaymentType::Card);
+    vM.chose_payment(PaymentType::Cash);
+    
+    vM.enter_coin(Coins::Ten);
+    vM.enter_coin(Coins::Ten);
+    
+    VendingMachine vM1;
+
+    vM1.select(Products::Chocolate);
+    vM1.chose_payment(PaymentType::Card);
+    vM1.tap_card(CardVendor::MasterCard);
+    
+
+
+
+
 }

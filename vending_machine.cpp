@@ -6,6 +6,8 @@ enum class Coins {Five = 5, Ten = 10, TwentyFive = 25};
 enum class Products {Chips, Soda, Chocolate, ProteinBar, Nachos};
 
 class VendingMachine {
+
+    
 private:
     VendingMachineStates m_currState = VendingMachineStates::Idle;
     int m_coinsTotal = 0;
