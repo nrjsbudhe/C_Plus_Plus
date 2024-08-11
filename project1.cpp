@@ -1,5 +1,4 @@
 #include<iostream>
-#include <bits/stdc++.h>
 using namespace std;
 
 int* max_min_grouping(int A[], int m, int n){
@@ -38,12 +37,7 @@ int* max_min_grouping(int A[], int m, int n){
         }
      }
     }
-    /*for(int j = 0; j < m; j++){
-        for(int i = 0; i < n; i++){
-            cout << P[i][j] << " ";
-        }
-        cout <<endl;
-   }*/
+
     static int G[100];
      int z = n;
     for(int j = m - 1; j > 0; j--){
@@ -102,10 +96,6 @@ int main(){
         }
         cout << endl;
 
-    /*cout << "B Array : ";
-   for(int j = 0; j < m; j++){
-        cout << B[j] << " ";
-        }*/
     return 0;
    }
 
