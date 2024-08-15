@@ -45,7 +45,7 @@ int main() {
     printAnswer(vec1);  // Calls the overload for arrays
     printAnswer(vec2);  // Calls the overload for arrays
     printAnswer(vec3);   // Calls the overload for arrays
-
     printAnswer(std::accumulate(vec.begin(), vec.end(), 1, std::multiplies<int>()));  // Calls the overload for single elements
+    std::cout << vec[-1] << std::endl;
     return 0;
 }

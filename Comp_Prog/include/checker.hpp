@@ -30,6 +30,17 @@ class Checker {
             std::cout << std::endl;
         }
 
+        // Overload for vectors of vectors
+        template <typename T>
+        void printAnswer(const std::vector<std::vector<T>>& vec) {
+            for (const auto& elem : vec) {
+                for (const auto& inner_elem : elem) {
+                    std::cout << inner_elem << " ";
+                }
+                std::cout << std::endl;
+            }
+        }
+
 };
 
 #endif // CHECKER_HPP

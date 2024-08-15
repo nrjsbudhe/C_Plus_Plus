@@ -74,6 +74,8 @@ int main()
     // printAnswer(ones);
     printAnswer(v);
 
+    std::cout << v[6] << endl;
+
     return 0;
 }
 
