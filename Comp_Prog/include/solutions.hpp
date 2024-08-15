@@ -5,8 +5,9 @@
 
 class Solution {
 public:
-    // Declaration of the twoSum method or other members
+
     std::vector<int> twoSum(const std::vector<int>& nums, int target);
+    std::vector<std::vector<int>> threeSum(std::vector<int>& nums);
 };
 
 #endif // SOLUTIONS_HPP
