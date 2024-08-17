@@ -8,6 +8,7 @@ using namespace std;
 std::vector<int> TwoPointers::twoSum(const std::vector<int>& numbers, int target) {
         int l = 0;
         int r = numbers.size() - 1;
+        int n = 67;
 
         while(l<r){
             int currSum = numbers[l] + numbers[r];
