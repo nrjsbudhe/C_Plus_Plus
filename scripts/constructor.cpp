@@ -17,7 +17,7 @@ class Animal{
 };
 
 int main(){
-    Person* p1 = new Person(12);
+    Person* p1 = new Person(120);
     Person* p2 = new Person();
 
     std::cout << p2->age << std::endl;
