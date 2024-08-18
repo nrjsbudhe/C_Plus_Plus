@@ -14,7 +14,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Cmake
-      run: cmake .
+      run: >
+        mkdir build
+        cd build
+        cmake ..
     - name: make
       run: make -j4
     - name: unit tests
