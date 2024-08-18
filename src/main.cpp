@@ -1,5 +1,5 @@
 #include<iostream>
-#include "../include/TwoPointers.hpp"
+#include "../include/Solutions.hpp"
 #include "../include/checker.hpp"
 
 int main()

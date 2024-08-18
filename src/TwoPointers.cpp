@@ -1,4 +1,4 @@
-#include"../include/TwoPointers.hpp"
+#include"../include/Solutions.hpp"
 #include<vector>
 #include<algorithm>
 #include<iostream>
