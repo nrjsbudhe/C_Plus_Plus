@@ -3,10 +3,11 @@
 class Person{
     public:
         int age;
-        Person() : age(0) { std::cout << "CTPR" << std::endl;};
-        Person(int AGE) : age(AGE) {
+        int height;
+        Person() : age(0) { std::cout << "CTPR" << std::endl;}
+        Person(int AGE, int HEIGHT = 0) : age(AGE), height(HEIGHT) {
             std::cout << "CTPR " << age << std::endl;
-            }  
+            }
 };
 
 class Animal{

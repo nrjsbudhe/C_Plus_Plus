@@ -33,5 +33,17 @@ int main()
     auto answer4 = sol.trap(heights);
     check.printAnswer(answer4);
 
+    BFS bfs;
+
+
+    bfs.create_graph(0, 1);
+    bfs.create_graph(0, 2);
+    bfs.create_graph(1, 2);
+    bfs.create_graph(1, 3);
+    bfs.create_graph(2, 3);
+    bfs.create_graph(3, 4);
+
+    bfs.example();
+
     return 0;
 }

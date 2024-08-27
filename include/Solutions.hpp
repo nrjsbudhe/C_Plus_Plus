@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
+#include <unordered_map>
 
 class TwoPointers {
 public:
@@ -26,6 +28,26 @@ public:
     bool isValidSudoku(std::vector<std::vector<char>>& board);
     int longestConsecutive(std::vector<int>& nums);
 };
+
+class Graph {
+public:
+    virtual void create_graph(float u, int v) = 0;
+    virtual void create_graph(int u, int v, int w) = 0;
+    virtual void printGraph() = 0;
+    virtual void findShortestPath(int start, int goal) = 0;
+};
+
+class BFS : public Graph {
+    private:
+        std::unordered_map<float, std::vector<int>> adjList;
+    public:
+        void create_graph(float u, int v) override;
+    // void create_graph(int u, int v, int w) override;
+        void printGraph() override;
+    // void findShortestPath(int start, int goal) override;
+    // void example();
+};
+
 
 
 #endif // SOLUTIONS_HPP
