@@ -4,19 +4,21 @@
 #include<iostream>
 #include <unordered_set>
 
-void BFS::create_graph(float u, int v) {
-        std::cout << "Creating graph with float and int" << std::endl;
-        adjList[u].push_back(v);
-        adjList[v].push_back(u);
+void Graph::create_graph(int u, int v, int w) {
+        std::cout << "Creating graph with int, int and int" << std::endl;
+        // adjList[u].
+        // adjList[v].push_back(std::make_pair(u, w));
     }
 
-void BFS::printGraph() {
-        std::cout << "Printing graph" << std::endl;
-        for (const auto &node : adjList) {
-                std::cout << node.first << " -> ";
-                for (const int &neighbour : node.second) {
-                    std::cout << neighbour << " ";
-                }
-                std::cout << std::endl;
-        }
+void Graph::print_graph() {
+        std::cout << "Printing graph with int, int and int" << std::endl;
+        // for (auto i : adjList) {
+        //     std::cout << i.first << " -> ";
+        //     for (auto j : i.second) {
+        //         std::cout << "(" << j.first << ", " << j.second << ") ";
+        //     }
+        //     std::cout << std::endl;
+        // }
     }
+
+

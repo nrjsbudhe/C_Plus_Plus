@@ -35,7 +35,6 @@ int main()
 
     BFS bfs;
 
-
     bfs.create_graph(0, 1);
     bfs.create_graph(0, 2);
     bfs.create_graph(1, 2);
@@ -43,7 +42,6 @@ int main()
     bfs.create_graph(2, 3);
     bfs.create_graph(3, 4);
 
-    bfs.example();
 
     return 0;
 }

@@ -24,28 +24,34 @@ public:
     std::vector<int> topKFrequent(std::vector<int>& nums, int k);
     std::string encode(std::vector<std::string>& longUrl);
     std::vector<std::string> decode(std::string shortUrl);
-    std::vector<int> productExceptSelf(std::vector<int>& nums); 
+    std::vector<int> productExceptSelf(std::vector<int>& nums);
     bool isValidSudoku(std::vector<std::vector<char>>& board);
     int longestConsecutive(std::vector<int>& nums);
 };
 
+/**
+ *  @brief Graph class
+ *  @details This class is an abstract class that contains the basic functions that a graph should have.
+ *  Every graph class should inherit from this class.
+ *  @param adjList: An unordered map that stores the adjacency list of the graph.
+ *  @param create_graph: Creates a graph with weight.
+ *  @param printGraph: print the graph.
+ *  @param findShortestPath: A pure virtual function that finds the shortest path between two nodes.
+ *
+ */
+
 class Graph {
-public:
-    virtual void create_graph(float u, int v) = 0;
-    virtual void create_graph(int u, int v, int w) = 0;
-    virtual void printGraph() = 0;
-    virtual void findShortestPath(int start, int goal) = 0;
+    private:
+        std::unordered_map<int, std::vector<int>> adjList;
+    public:
+        virtual void create_graph(int u, int v, int w);         //Graph with weight
+        virtual void print_graph();
+        virtual void findShortestPath(int start, int goal) = 0;
 };
 
 class BFS : public Graph {
-    private:
-        std::unordered_map<float, std::vector<int>> adjList;
     public:
-        void create_graph(float u, int v) override;
-    // void create_graph(int u, int v, int w) override;
-        void printGraph() override;
-    // void findShortestPath(int start, int goal) override;
-    // void example();
+        void findShortestPath(int start, int goal) override;
 };
 
 

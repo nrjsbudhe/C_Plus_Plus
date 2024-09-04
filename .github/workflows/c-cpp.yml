@@ -8,19 +8,14 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Cmake
-      run: |
-        mkdir build
-        cd build
-        cmake ..
+    - name: install gtest manually
+      run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
+    - uses: actions/checkout@v1
+    - name: Confugure
+      run: mkdir build && cd build && cmake ..
     - name: make
-      run: make -j4
+      run: cd build && make
     - name: unit tests
       run: ./MyTests
-    - name: clean
-      run: make clean
