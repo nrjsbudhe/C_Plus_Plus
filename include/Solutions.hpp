@@ -1,5 +1,5 @@
 #ifndef SOLUTIONS_HPP
-#define SOLUTIONS_HPP
+#define SOLUTIONS_HPP   // Header guard         
 
 #include <vector>
 #include <string>
@@ -44,14 +44,23 @@ class Graph {
     private:
         std::unordered_map<int, std::vector<int>> adjList;
     public:
-        virtual void create_graph(int u, int v, int w);         //Graph with weight
-        virtual void print_graph();
-        virtual void findShortestPath(int start, int goal) = 0;
+        virtual void create_graph(int u, int v) {
+            std::cout << "Creating Graph - Base Implementation" << std::endl;
+        };
+        virtual void print_graph() {
+            std::cout << "Printing Graph - Base Implementation" << std::endl;
+        };
+        // virtual void findShortestPath(int start, int goal);   //Pure virtual function
+        ~Graph() = default;
 };
 
 class BFS : public Graph {
+
     public:
-        void findShortestPath(int start, int goal) override;
+        void create_graph(int u, int v) override;
+        // void print_graph() ;
+        // void findShortestPath(int start, int goal) override;
+        ~BFS() {};
 };
 
 

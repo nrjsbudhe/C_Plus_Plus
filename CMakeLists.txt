@@ -11,16 +11,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 include_directories(include)
 
 # You can list additional source files like this:
-# add_executable(main src/main.cpp src/TwoPointers.cpp src/ArrayHashing.cpp)
+add_executable(main src/main.cpp src/TwoPointers.cpp src/ArrayHashing.cpp src/Graph.cpp)
+add_exectuable(mutex src/mutex.cpp)
 
-# Add GTest
-add_subdirectory(external/googletest)
+# Enable testing
+enable_testing()
 
-# Include directories for GTest
-include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+# Find GoogleTest package installed system-wide
+find_package(GTest REQUIRED)
 
 # Add the test executable
-add_executable(MyTests tests/test_main.cpp src/TwoPointers.cpp src/ArrayHashing.cpp)
+add_executable(MyTests tests/test_main.cpp src/TwoPointers.cpp src/ArrayHashing.cpp src/Graph.cpp)
 
-# Link test executable against GTest and GTest main
-target_link_libraries(MyTests gtest gtest_main)
+# Link against the system-installed GTest
+target_link_libraries(MyTests GTest::GTest GTest::Main)
